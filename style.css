@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    
+
+}
+.title{
+    text-align: center;
+}
+.cards{
+    width: 30%;
+    box-shadow: 0 0 4px rgb(76, 3, 76);
+    margin:1rem 0;
+    align-items: center;
+    padding: 1em;
+    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    background:rgb(252, 250, 252);
+    border-radius: 10px;
+    
+
+
+}
+.cards img{
+    width: 50%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.cards h1{
+    font-size: 1.4rem;
+    width: 40%;
+    color: purple;
+    font-weight: bolder;
+}
