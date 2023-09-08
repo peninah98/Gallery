@@ -50,26 +50,59 @@
 // https://api.github.com/users
 
 
-async function githubUsers(){
-    let response = await fetch('https://api.github.com/users')
-    console.log(response)
-    let data = await response.json()
-    console.log(data)
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("btn");
+  async function githubUsers() {
+    let response = await fetch("https://api.github.com/users");
+    console.log(response);
+    let data = await response.json();
+    console.log(data);
     console.log(data[0].avatar_url);
-     let display = " ";
-    data.map((values)=>{
-        display += ` <div class="cards">
+    let display = " ";
+    data.map((values) => {
+      display += ` <div class="cards">
             <img src=${values.avatar_url} alt=${values.login}>
             <h1>${values.login}</h1>
         </div>`;
-
-    })
+    });
     document.getElementById("root").innerHTML = display;
-   const displayMessage = await new Promise((resolve,reject)=>{
-        setTimeout(resolve, 2000);
-        console.log("All data is being displayed")
-    })
-    document.getElementById("title").textContent=displayMessage
-}
+    const displayMessage = await new Promise((resolve, reject) => {
+      setTimeout(resolve, 2000);
+      console.log("All data is being displayed");
+    });
+    document.getElementById("title").textContent = displayMessage;
+  }
 
-githubUsers()
+  githubUsers();
+
+  let promise = new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.txt", true);
+    xhr.send();
+
+    xhr.onload = function () {
+      if (xhr.statusText === "OK") {
+        resolve(xhr.responseText);
+      } else {
+        reject(`Error ${xhr.status}`);
+      }
+    };
+  });
+
+  promise
+    .then((dataFromtxt) => {
+      document.querySelector(".text").textContent = dataFromtxt;
+    })
+    .catch((error) => {
+      console.error(error); // Handle errors here
+    });
+
+  btn.addEventListener("click", () => {
+    console.log("Button clicked");
+    btn.style.background = "white";
+    btn.style.color = "purple";
+  });
+
+  console.log(btn);
+});
+

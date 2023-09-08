@@ -36,3 +36,37 @@
     color: purple;
     font-weight: bolder;
 }
+
+.text{
+    width:50% ;
+    background-color: rgb(97, 6, 97);
+    color: white;
+    font-weight: bold;
+    padding: 5%;
+    line-height: 20px;
+    margin: 5%;  
+    align-items: center;  
+}
+
+.holder{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#btn{
+    background-color: white;
+    color: purple;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight:bold;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 2px solid rgb(97, 6, 97);
+    cursor: pointer;
+
+
+}
