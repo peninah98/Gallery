@@ -52,6 +52,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("btn");
+  const infos = document.querySelector(".infos");
   async function githubUsers() {
     let response = await fetch("https://api.github.com/users");
     console.log(response);
@@ -101,8 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Button clicked");
     btn.style.background = "white";
     btn.style.color = "purple";
-  });
 
-  console.log(btn);
+   fetch('https://jsonplaceholder.typicode.com/users').then((res)=>{
+    return res.json()
+    
+   })
+   .then((single)=>{
+  
+    infos.textContent = single[3].name;
+   })
+
+  
+   
+  });
 });
 

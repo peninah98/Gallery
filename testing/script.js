@@ -22,3 +22,7 @@ mypromise.then(()=>{
 async function waitForData(){
     
 }
+
+
+
+

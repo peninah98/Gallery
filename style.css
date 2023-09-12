@@ -28,6 +28,7 @@
     width: 50%;
     object-fit: contain;
     border-radius: 20px;
+    
 }
 
 .cards h1{
@@ -67,6 +68,4 @@
     padding: 10px 14px;
     border: 2px solid rgb(97, 6, 97);
     cursor: pointer;
-
-
 }
